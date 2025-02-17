@@ -64,7 +64,17 @@ int minTimeToVisitAllPoints(vector <vector <int> > &points){
     return ans;
 }
 
-
+int maxProfit(vector<int> & prices){
+    int maxProfit =0;
+    int minPrice = 0;
+    for (int i = 0; i < prices.size(); i++)
+    {
+        minPrice = min(minPrice, prices[i]);
+        maxProfit = max(maxProfit, prices[i]- minPrice);
+    }
+    return maxProfit;
+    
+}
 
 int main(){
     int arr[] = {8,1,2,2,3};
